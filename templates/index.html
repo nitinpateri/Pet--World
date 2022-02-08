@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pet's World</title>
+    <link rel='stylesheet' href='../static/style.css'>
+</head>
+<body>
+    <section id='head_page'>
+        <a href='#Signin'><button id='get_started'>Get Started</button></a>
+        <img src='../static/images/dog.png'>
+        <div id="title-text">
+            <h1>Pet <br> World</h1>
+            <p>
+                Pet World<br> is your one stop<br> shop for all pet<br>needs and resources.<p style="font-size: 20px;"> Since 2022<p>
+            </p>
+        </div>
+    </section>
+    <section id='about-us'>
+        <div id="about">
+            <h1>About Us</h1>
+            <h3>We Care for your Pets.</h3>
+        </div>
+        <br>
+        <div id='about1'>
+            <img src='../static/images/cat.PNG'>
+            
+                
+            <h1><br><br><br><br>Vet Doctors.<br><br><p>
+                Meet the worlds most renowned and respected veterinary doctors on this platform at the comfort of your home. 
+            </p></h1>
+        </div>
+        <div id='about1'>    
+            <h1><br><br><br><br>Health Database.<br><br><p>
+                Worried about your pet’s health? Is you pet showing abnormal symptoms or behaviour? Then this service is for you. 
+            </p></h1>
+            <img id='parrot' src='../static/images/parrot.PNG'>
+        </div>
+        <img src='../static/images/rabbit.PNG' id='rabbit'>
+         <div id='about1'>    
+                <h1><br><br><br><br>Nearest stores.<br><br><p>
+                Confused about the perfect pet maintenance and accessory store for you?<br>
+                    Fear not! This service provides all the pet owners with the nearest pet maintenance stores along with contact details for the same. </p>
+                   </h1>
+                <img src='../static/images/store.PNG'>
+        </div>
+        
+    </section>
+    <section id='Signin'>
+        <h1 id='join'>Come join and make memories together.</h1>
+        <h1 id='register'>Join us on this amazing journey and register now. </h1>
+        <div id="signup">
+                <form method='post' action='signup'>
+                <label>Username</label><br>
+                <input type="text" required="required" name='username' placeholder="Enter Your Username"><br><br>
+                <label>Email</label><br>
+                <input type="email" required="required" name='email' placeholder="Enter your mail id"> <br><br>
+                <label>Password</label><br>
+                <input type="password" required="required" name='password' placeholder="Enter Your Password"><br><br>
+                <label>Confirm Password</label><br>
+                <input type="password" required="required" name='r_password' placeholder="Confirm Your Password"><br><br>
+                <label>Location</label><br><br>
+                <select name='state' id='state' required="required" onchange="getSelectValue()" >
+                    <option value="">Select state</option>
+                    <option value="Abu Dhabi">Abu Dhabi</option>
+                    <option value='Dubai'>Dubai</option>
+                    <option value="Sharjah">Sharjah</option>
+                    <option value="Ajman"> Ajman</option>
+                </select><br><br>
+                <button id="select1" style="background-color: white;" type="button" onclick="change()">Select nearest lankmark</button>
+                <select name='city1' id='dubai' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="Bur Dubai">Bur Dubai</option>
+                    <option value='Al Nadha'>Al Nadha</option>
+                    <option value="Jabel Ali">Jabel Ali</option>
+                    <option value="Al Mirdif">Al Mirdif</option>
+                </select>
+                 <select name='city2' id='sharjah' required="required" onchange="getSelectValue()">
+                     <option value="city">Select nearest lankmark</option>
+                     <option value="National Paints">National Paints</option>
+                     <option value='Rolla'>Rolla</option>
+                     <option value="Khor Fakkan">Khor Fakkan</option>
+                     <option value="Al Qasba">Al Qasba</option>
+                 </select>
+                 <select name='city3' id='abu_dhabi' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="Al Ain">Al Ain</option>
+                    <option value='Hazza Bin Zayed Street'>Hazza Bin Zayed Street</option>
+                    <option value="Al Nahyan">Al Nahyan</option>
+                    <option value="Sultan Bin Zayed St ">Sultan Bin Zayed St </option>
+                </select>
+                <select name='city4' id='ajman' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="Ajman">Ajman</option>
+                    <option value='Al Bustān'>Al Bustān</option>
+                </select><br><br>
+                 <label>Category</label><br>
+                 <select name = 'category' required="required" onchange="getSelectValue()">
+                    <option value="Category">Choose Your Category</option>
+                    <option value="business">Business</option>
+                    <option value='not_business'>Not Business</option>
+                    <option value='vet'>Pet Doctor</option>
+                </select><br><br>
+                <button type='submit'>NEXT</button>
+            </form>
+        </div>
+        <div id="line"></div>
+        <div id="login">
+            <h1>Already have an 
+                account? Log in.</h1><br><br>
+            <form method='post' action='login'>
+                <label>Email</label><br>
+                <input type="email"  required="required" name='email' placeholder="Enter your mail id"> <br><br>
+                <label>Password</label><br>
+                <input type="password"  required="required" name='password' placeholder="Enter Your Password"><br><br>
+                <button type='submit'>LOGIN</button>
+            </form>
+        </div>
+        <h1 id='join'></h1>
+
+    </section>
+    <script>
+        var dubai = document.getElementById('dubai')
+        var sharjah = document.getElementById('sharjah')
+        var ajman = document.getElementById('ajman')
+        var abu_dhabi = document.getElementById('abu_dhabi')
+        var state; 
+        var select = document.getElementById('select1')
+        var state1 = document.getElementById('state')
+        state1.onchange=()=>{
+            state = document.getElementById('state').value
+        }
+        function change(){
+            select.style.display = 'none'
+            if (state=='Dubai'){
+                dubai.style.display = 'block'
+            }
+            else if (state=='Sharjah'){
+                sharjah.style.display = 'block'
+            }
+            else if (state=='Ajman'){
+                ajman.style.display = 'block'
+            }
+            else if (state=='Abu Dhabi'){
+                abu_dhabi.style.display = 'block'
+                
+            }
+            else {
+                alert("You must select an emirate first")
+                select.style.display = 'block'
+            }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+h1 {
+  font-family: sans-serif;
+  font-style: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 72px;
+  line-height: 81px;
+  line-height: 100%;
+  text-align: center;
+  vertical-align: top;
+}
+
+ul {
+  text-decoration: none;
+}
+li {
+  font-family: Roboto;
+
+  font-style: normal;
+  font-size: 25px;
+  line-height: 29px;
+  line-height: 100%;
+  text-align: Left;
+  vertical-align: Top;
+  display: inline-block;
+}
+li:hover {
+  border-style: solid;
+  border-color: black;
+  background-color: #949292;
+}
+a {
+  display: block;
+  padding: 8px;
+  color: #525151;
+}
+input {
+  fill: Solid#C4C4C4;
+  border-radius: 30px;
+  width: 460px;
+  height: 46px;
+  text-align: center;
+
+  font-family: sans-serif;
+  font-size: 24px;
+}
+#search {
+  left: 100px;
+  position: relative;
+  z-index: 1;
+}

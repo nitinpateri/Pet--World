@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pet World</title>
+    <link rel='stylesheet' href='../static/style.css'>
+    <link rel='shortcut icon' href='images/favicon.ico' type='image/x-con'>
+    <script src="https://kit.fontawesome.com/6ec1b407db.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Menu-->
+    <section id='menu'>
+        <img src='../static/images/logo.png' id='logo'><h1 id='h1_logo'>Pet World</h1>
+        <div>
+            <li  style='border-bottom:3px solid #f4f3ff;'><i class="fas fa-home"></i> Home</a></li>
+            <li><a href='./healthcare'><i class="fas fa-briefcase-medical"></i> Health Care</a></li> 
+            <li><a href='/Upload'><i class="fas fa-upload"></i> Upload</a></li>
+            <li ><a href='/store'><i class="fas fa-store"></i> Store</a></li>
+            <li><a href='search'><i class="fas fa-search"></i> Search</a></li>
+            <li><a href='/'><i class="fas fa-user"></i></a></li>  
+            <li><a href='/notification'><i class="fas fa-bell"></i></a></li>  
+        </div>
+        {{data}}
+    </section>
+    <!--
+        <section id='home_page' style="display: inline-block;">
+        <div style="height:100px;
+        width:100%;
+        top: 10%;
+        position: absolute;
+        background:#C4C4C4;
+        display: inline-block;
+        "><i style="
+        left:20%;
+        position: absolute;
+        font-size:90px;
+        padding:15px;
+        border-radius: 50px;
+        background:#fff;
+        " class="fas fa-user"></i> 
+        <p style="left:30%;
+        position:absolute;">Username:{{data[0]['username']}}</p>
+        <form action={{data[0]['username']+"/follow"}} method="post">
+            <button onclick = 'change()' id="follow" style="left:40%;
+                position:absolute;padding:10px;
+                background-color: red;border-radius: 24px;color: #fff;margin-top:15px">{{data[1]}}</button>
+        </form>
+        <a href={{data[0]['username']+"/message"}} >
+            <button style="left:46%;
+        position:absolute;padding:10px;
+        background-color: red;border-radius: 24px;color:#fff;margin-top:15px">message</button>
+        </a>
+    </div>
+    <div id="details">
+        <div id="bio">
+            <div id="posts">
+                <a>Bio</a>
+                <br><p>{{data[0]['bio']}}</p>
+            </div>
+            <div id="posts">
+                <a>Details</a>
+                <br><p>Pet:{{data['pet_type']}}<br>Breed:{{data[0][breed]}}</p>
+            </div>
+            {% for i in data[0]['post']:%}
+                <div id="posts">
+                    <a href="">{{data[0]['username']}}</a>
+                    <br><p>{{i}}</p>
+                </div>
+            {%endfor%}
+        </div>
+        
+    </div>
+</section>
+    -->
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care</title>
+    <link rel='stylesheet' href="../static/style.css">
+    <script src="https://kit.fontawesome.com/6ec1b407db.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!--Menu-->
+    <section id='menu'>
+        <img src='../static/images/logo.png' id='logo'><h1 id='h1_logo'>Pet World</h1>
+        <div>
+            <li><i class="fas fa-home"></i> Home</a></li>
+            <li style='border-bottom:3px solid #f4f3ff;'><a href='./healthcare'><i class="fas fa-briefcase-medical"></i> Health Care</a></li> 
+            <li><a href='/Upload'><i class="fas fa-upload"></i> Upload</a></li>
+            <li ><a href='/store'><i class="fas fa-store"></i> Store</a></li>
+            <li><a href='/'><i class="fas fa-user"></i> Account</a></li>  
+            <li><a href='/notification'><i class="fas fa-bell"></i></a></li>  
+        </div>
+        
+    </section>
+    <section id='home_page'>
+        <div id="health">
+            <div>
+                <a href='./doctors'><h1 >Vet Doctors.</h1></a>
+                <a href='./doctors'><img  style='cursor:pointer' src='../static/images/doctor.png'></a>
+            </div>
+            <br><br>
+            <div>
+                <h1 onclick='health_D1()'>Diseases</h1>
+                <img onclick='health_D1()' style='cursor:pointer' src='../static/images/dog1.png'>
+        
+            </div>
+        </div>
+        <div id='diseases' >
+                {% block content %}
+
+                <h3 align="center">Disease Database</h3>
+                <div id="form-group">
+                    <form method="POST">
+                        <label for="text">Search for your Disease</label><br>
+                        
+                        <select id="pettype" name="pettype" onChange="getOption()">
+                            <option>Choose pet</option>
+                            <option value="cat" name="cat" >Cat</option>
+                            <option value="dog" name="dog">Dog</option>
+                            <option value="parrot" name="parrot">Parrot</option>
+                            <option value="lovebirds" name="lovebirds">Love Birds</option>
+                        </select><br><br>
+                        <select id="symptoms" name="symptoms" onChange="getOption()">
+                            <option>Choose symptoms</option>
+                            {% for item in sym:%}
+                                    <option  value="{{item}}">{{item}}</option>
+                                {% endfor %}
+                        </select><br><br>
+                    
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;margin-bottom: 10px;">Submit</button>
+                    </form>
+                    
+                </div>
+            {% endblock %}
+        </div>
+    </section>
+    <script>
+        var diseases = document.getElementById('diseases')
+        var doctor = document.getElementById('doctor')
+        var health = document.getElementById('health')
+        function health_D1(){
+            diseases.style.display = 'block'
+            health.style.display = 'none'
+            doctor.style.display = 'none'
+        }
+        function health_D2(){
+            diseases.style.display = 'none'
+            health.style.display = 'none'
+            doctor.style.display = 'block'
+        }
+    </script>
+</body>
+</html>

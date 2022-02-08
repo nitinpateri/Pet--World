@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores - Pet World</title>
+    <link rel='stylesheet' href='../static/style.css'>
+    <link rel='shortcut icon' href='images/favicon.ico' type='image/x-con'>
+    <script src="https://kit.fontawesome.com/6ec1b407db.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Menu-->
+    <section id='menu'>
+        <img src='../static/images/logo.png' id='logo'>
+        <h1 id='h1_logo'>Pet World</h1>
+        <div>
+            <li style='border-bottom:3px solid #f4f3ff;'><i class="fas fa-home"></i> Home</a></li>
+            <li><a href='./healthcare'><i class="fas fa-briefcase-medical"></i> Health Care</a></li>
+            <li><a href='/Upload'><i class="fas fa-upload"></i> Upload</a></li>
+            <li><a href='/store'><i class="fas fa-store"></i> Store</a></li>
+            <li><a href='search'><i class="fas fa-search"></i> Search</a></li>
+            <li><a href='/'><i class="fas fa-user"></i></a></li>
+            <li><a href='/notification'><i class="fas fa-bell"></i></a></li>
+        </div>
+
+    </section>
+    <section style="top:10%;position:absolute">
+        <form id="stores">
+            <label for="stores">Select address:</label>
+                <select name='state' id='state' required="required" onchange="getSelectValue()" >
+                    <option value="">Select state</option>
+                    <option value="Abu Dhabi">Abu Dhabi</option>
+                    <option value='Dubai'>Dubai</option>
+                    <option value="Sharjah">Sharjah</option>
+                    <option value="Ajman"> Ajman</option>
+                </select><br><br>
+                <button id="select1" style="background-color: white;" type="button" onclick="change()">Select nearest lankmark</button>
+                <select name='city1' id='dubai' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="Bur Dubai">Bur Dubai</option>
+                    <option value='Al Nadha'>Al Nadha</option>
+                    <option value="Jabel Ali">Jabel Ali</option>
+                    <option value="Al Mirdif">Al Mirdif</option>
+                </select>
+                <select name='city2' id='sharjah' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="National Paints">National Paints</option>
+                    <option value='Rolla'>Rolla</option>
+                    <option value="Khor Fakkan">Khor Fakkan</option>
+                    <option value="Al Qasba">Al Qasba</option>
+                </select>
+                <select name='city3' id='abu_dhabi' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="Al Ain">Al Ain</option>
+                    <option value='Hazza Bin Zayed Street'>Hazza Bin Zayed Street</option>
+                    <option value="Al Nahyan">Al Nahyan</option>
+                    <option value="Sultan Bin Zayed St ">Sultan Bin Zayed St </option>
+                </select>
+                <select name='city4' id='ajman' required="required" onchange="getSelectValue()">
+                    <option value="city">Select nearest lankmark</option>
+                    <option value="Ajman">Ajman</option>
+                    <option value='Al Bustān'>Al Bustān</option>
+                </select><br><br>
+            <select name="store" id="store">
+                {% for item in seq %}
+                    <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+                </select>
+            </select>
+        </form>
+    </section>
+    <script>
+        var dubai = document.getElementById('dubai')
+        var sharjah = document.getElementById('sharjah')
+        var ajman = document.getElementById('ajman')
+        var abu_dhabi = document.getElementById('abu_dhabi')
+        var state; 
+        var select = document.getElementById('select1')
+        var state1 = document.getElementById('state')
+        state1.onchange=()=>{
+            state = document.getElementById('state').value
+        }
+        function change(){
+            select.style.display = 'none'
+            if (state=='Dubai'){
+                dubai.style.display = 'block'
+            }
+            else if (state=='Sharjah'){
+                sharjah.style.display = 'block'
+            }
+            else if (state=='Ajman'){
+                ajman.style.display = 'block'
+            }
+            else if (state=='Abu Dhabi'){
+                abu_dhabi.style.display = 'block'
+                
+            }
+            else {
+                alert("You must select an emirate first")
+                select.style.display = 'block'
+            }
+            }
+    </script>
+    
+</body>
+
+</html>
