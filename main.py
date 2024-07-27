@@ -12,7 +12,7 @@ def index():
 
 #mongodb connection
 client = pymongo.MongoClient(
-    "mongodb+srv://codex:1234@cluster0.hmhik.mongodb.net/codex?retryWrites=true&w=majority"
+    "mongodb+srv://codex:<password>@cluster0.hmhik.mongodb.net/codex?retryWrites=true&w=majority"
 )
 mydb = client['codex']
 mycol = mydb['user_data']
